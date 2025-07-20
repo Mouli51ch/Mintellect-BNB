@@ -105,7 +105,7 @@ export function TrustScoreGenerator({ documentId, documentText, plagiarismResult
       }
 
       // Fetch trust score from backend with real data
-      const response = await fetch(`http://localhost:5000/api/trust-score/generate`, {
+      const response = await fetch(`https://mintellect-bnb.onrender.com/api/trust-score/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

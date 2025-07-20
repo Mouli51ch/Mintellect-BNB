@@ -264,7 +264,7 @@ export default function WorkflowPage() {
     
     const poll = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/status/${reportId}`);
+        const response = await fetch(`https://mintellect-bnb-plagiarism.onrender.com/status/${reportId}`);
         if (!response.ok) throw new Error(`Status check failed: ${response.status}`);
         const data = await response.json();
         
@@ -273,7 +273,7 @@ export default function WorkflowPage() {
         if (data.data.status === 2 || data.data.status_label === 'checked') {
           // Report is complete
           console.log('Report completed, fetching final results');
-          const finalResponse = await fetch(`http://localhost:8000/report/${reportId}`);
+          const finalResponse = await fetch(`https://mintellect-bnb-plagiarism.onrender.com/report/${reportId}`);
           if (finalResponse.ok) {
             const finalData = await finalResponse.json();
             console.log('Final report data:', finalData);
@@ -281,7 +281,7 @@ export default function WorkflowPage() {
             
             // Fetch HTML report
             try {
-              const htmlRes = await fetch(`http://localhost:8000/reports/html/${reportId}`);
+              const htmlRes = await fetch(`https://mintellect-bnb-plagiarism.onrender.com/reports/html/${reportId}`);
               if (htmlRes.ok) {
                 const htmlData = await htmlRes.json();
                 setPlagiarismResult((prev: any) => ({
@@ -327,7 +327,7 @@ export default function WorkflowPage() {
       const formData = new FormData();
       formData.append('text', documentText);
       formData.append('title', documentName || 'Document.txt');
-      const response = await fetch('http://localhost:8000/check', {
+      const response = await fetch('https://mintellect-bnb-plagiarism.onrender.com/check', {
         method: 'POST',
         body: formData,
       });
@@ -355,7 +355,7 @@ export default function WorkflowPage() {
         // If we have a report ID, fetch the HTML report
         if (data.data.id) {
           try {
-            const htmlRes = await fetch(`http://localhost:8000/reports/html/${data.data.id}`);
+            const htmlRes = await fetch(`https://mintellect-bnb-plagiarism.onrender.com/reports/html/${data.data.id}`);
             if (htmlRes.ok) {
               const htmlData = await htmlRes.json();
               console.log('HTML Report Response:', htmlData);

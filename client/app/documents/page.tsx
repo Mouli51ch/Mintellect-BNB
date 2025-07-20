@@ -391,7 +391,7 @@ export default function DocumentsPage() {
       if (parsedData.reportId) {
         try {
           console.log('Fetching sources from API for report ID:', parsedData.reportId)
-          const sourcesResponse = await fetch(`http://localhost:8000/reports/sources/${parsedData.reportId}`)
+          const sourcesResponse = await fetch(`https://mintellect-bnb-plagiarism.onrender.com/reports/sources/${parsedData.reportId}`)
           if (sourcesResponse.ok) {
             const sourcesData = await sourcesResponse.json()
             if (sourcesData.data?.sources) {
@@ -419,7 +419,7 @@ export default function DocumentsPage() {
       console.log('Sending request to server:', requestBody)
 
       // Use the new S3 PDF generation endpoint
-      const response = await fetch('http://localhost:5000/api/pdf/generate-plagiarism-report-s3', {
+      const response = await fetch('https://mintellect-bnb.onrender.com/api/pdf/generate-plagiarism-report-s3', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -469,7 +469,7 @@ export default function DocumentsPage() {
     try {
       console.log('Trying local PDF generation as fallback...')
       
-      const response = await fetch('http://localhost:5000/api/pdf/generate-plagiarism-report-local', {
+      const response = await fetch('https://mintellect-bnb.onrender.com/api/pdf/generate-plagiarism-report-local', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -512,7 +512,7 @@ export default function DocumentsPage() {
 
     try {
       // Use the new S3 PDF generation endpoint for trust score reports
-      const response = await fetch('http://localhost:5000/api/pdf/generate-trust-score-report-s3', {
+      const response = await fetch('https://mintellect-bnb.onrender.com/api/pdf/generate-trust-score-report-s3', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
