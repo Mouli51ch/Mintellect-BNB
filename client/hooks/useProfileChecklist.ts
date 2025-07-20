@@ -12,7 +12,7 @@ export function useProfileChecklist() {
   const { walletAddress, walletConnected } = useWallet();
   const shouldFetch = walletConnected && walletAddress;
   const { data, error, isLoading } = useSWR(
-    shouldFetch ? [`http://localhost:5000/settings/profile/requirements`, walletAddress] : null,
+    shouldFetch ? [`https://mintellect-bnb.onrender.com/settings/profile/requirements`, walletAddress] : null,
     ([url, wallet]) => fetcher(url, wallet),
     { revalidateOnFocus: false }
   );
@@ -32,7 +32,7 @@ export function useProfileStatus() {
   const { walletAddress, walletConnected } = useWallet();
   const shouldFetch = walletConnected && walletAddress;
   const swr = useSWR(
-    shouldFetch ? [`http://localhost:5000/settings/profile/profile?wallet=${walletAddress}`, walletAddress] : null,
+    shouldFetch ? [`https://mintellect-bnb.onrender.com/settings/profile/profile?wallet=${walletAddress}`, walletAddress] : null,
     ([url]) => fetch(url).then(res => res.json()),
     { revalidateOnFocus: false }
   );

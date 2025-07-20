@@ -19,7 +19,7 @@ export function useProfileGate() {
       return;
     }
     setChecking(true);
-    fetch(`http://localhost:5000/settings/profile/profile?wallet=${walletAddress}`)
+    fetch(`https://mintellect-bnb.onrender.com/settings/profile/profile?wallet=${walletAddress}`)
       .then(res => {
         if (res.status === 404) return { allComplete: false };
         return res.json();

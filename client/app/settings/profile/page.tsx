@@ -96,7 +96,7 @@ export default function ProfileSettings() {
       formData.append("institution", form.institution);
       formData.append("bio", form.bio);
       if (avatarFile) formData.append("avatar", avatarFile);
-      const res = await fetch("http://localhost:5000/settings/profile/profile", {
+      const res = await fetch("https://mintellect-bnb.onrender.com/settings/profile/profile", {
         method: "POST",
         body: formData,
         headers: { "x-wallet": walletAddress }

@@ -4,7 +4,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     
-    const response = await fetch('http://localhost:5000/api/workflow/archive', {
+    const response = await fetch('https://mintellect-bnb.onrender.com/api/workflow/archive', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export async function DELETE(request: NextRequest) {
   try {
     const body = await request.json();
     
-    const response = await fetch('http://localhost:5000/api/workflow/archive', {
+    const response = await fetch('https://mintellect-bnb.onrender.com/api/workflow/archive', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
