@@ -15,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 load_dotenv()
 
 API_KEY = os.getenv("PLAGIARISMSEARCH_API_KEY")
+PORT = int(os.getenv("PORT", 8000))  # For Render deployment compatibility
 if API_KEY:
     print(f"Loaded API KEY: {API_KEY[:4]}...{API_KEY[-4:]}")
 else:
