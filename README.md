@@ -131,6 +131,9 @@ Mintellect uses a decentralized, consensus-driven peer review protocol to ensure
 
 This protocol ensures that only high-quality, community-validated research is minted as a verified NFT, and that reviewer reputation is transparently managed.
 
+<img width="4000" height="4064" alt="image" src="https://github.com/user-attachments/assets/a49fdeb7-3198-4491-a217-77f1149dea1d" />
+
+
 ---
 
 ## 📊 Analytics & NFT Gallery
